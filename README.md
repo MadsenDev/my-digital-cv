@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Digital CV of Christoffer Madsen
 
-## Getting Started
+This project is a **Digital CV** for showcasing my skills, work experiences, projects, and more in a clean, interactive format. Built with **Next.js**, **TypeScript**, and **Tailwind CSS**, it provides a well-organized digital CV experience with animations, custom styling, and a printable view.
 
-First, run the development server:
+### [Live Site](https://cv.madsens.dev)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Responsive Layout**: The CV adapts seamlessly to desktop and mobile screens, ensuring an optimal viewing experience.
+- **Interactive Sections**: Sections for work experience, education, skills, projects, languages, hobbies, and more, with smooth animations.
+- **Printable View**: A dedicated, styled version optimized for printing or saving as a PDF.
+- **Reusable Data Files**: All data (work experience, skills, etc.) are stored in separate files, making it easy to update and reuse.
+- **Dynamic Animations**: Uses **Framer Motion** to add interactive and visually appealing animations throughout the CV.
+- **Open Graph and Twitter Meta Tags**: Optimized for social media previews when sharing.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework**: [Next.js](https://nextjs.org/) with TypeScript
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) for custom and responsive designs
+- **Animation**: [Framer Motion](https://www.framer.com/motion/) for engaging animations
+- **Icons**: [React Icons](https://react-icons.github.io/react-icons/) for skill and hobby illustrations
+- **Deployment**: Hosted on a DigitalOcean server with an **Apache** setup and **PM2** for process management.
 
-## Learn More
+## Installation and Setup
 
-To learn more about Next.js, take a look at the following resources:
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/MadsenDev/my-digital-cv.git
+   cd digital-cv
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
 
-## Deploy on Vercel
+4. **Build for production**:
+   ```bash
+   npm run build
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. **Start the production server**:
+   ```bash
+   npm start
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+6. **Generate Static Files** (optional):
+   ```bash
+   npm run export
+   ```
+
+## Key Components
+
+- **`<Hero />`**: Introductory section for initial presentation.
+- **`<AboutMe />`**: Profile introduction and background.
+- **`<WorkExperienceTimeline />`**: Visualized timeline of work experience with animations.
+- **`<EducationSection />`**: Display of educational qualifications.
+- **`<SkillsSection />`**: Grid display of skills with proficiency bars.
+- **`<LanguagesSection />`**: Language proficiency indicators.
+- **`<HobbiesSection />`**: Icons and descriptions of hobbies.
+- **`<ThankYouSection />`**: A closing thank-you message with contact details.
+
+## Deployment
+
+### Requirements
+- **Node.js** and **npm**
+- **PM2** for process management
+- **Apache** for server setup (optional if using another server)
+
+### Steps
+1. **Build** the project:
+   ```bash
+   npm run build
+   ```
+
+2. **Start** the project with PM2:
+   ```bash
+   pm2 start npm --name "cv-app" -- start
+   ```
+
+3. **Configure Apache** (if using):
+   - Set up a virtual host pointing to `http://localhost:3000` for production deployment.
+   - Enable SSL if using HTTPS.
+
+### Printing the CV
+The CV has a print-specific layout triggered via `@media print` CSS rules. This layout removes unnecessary elements like headers/footers and focuses on delivering a well-structured, printable version.
+
+## Contributing
+
+Feel free to fork the repository and create pull requests for any enhancements, bug fixes, or additional features.
+
+1. **Fork the repository**
+2. **Create a new branch** for your feature
+3. **Commit your changes** and push the branch
+4. **Open a Pull Request**
+
+## License
+
+This project is open-source and available under the **MIT License**.
