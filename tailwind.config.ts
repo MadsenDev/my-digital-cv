@@ -10,10 +10,17 @@ const config: Config = {
     extend: {
       colors: {
         background: "var(--background)",
+        background2: "var(--background2",
         foreground: "var(--foreground)",
+        primary: "var(--primary-color)",        // Your primary color
+        primaryHover: "var(--primary-hover)",   // Hover state for primary
+      },
+      backgroundImage: {
+        'hero-pattern': "url('/pattern4.webp')",
       },
     },
   },
   plugins: [],
 };
+
 export default config;

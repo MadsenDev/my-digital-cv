@@ -4,18 +4,66 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --foreground: #252525;
+  --background2: #6e6e6e;
+  --primary-color: #1e3a8a;  /* Example primary color (blue) */
+  --primary-hover: #1c3466;   /* Darker blue for hover */
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.printable-cv-layout {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Default styles for the digital CV */
+.printable-cv {
+  display: none;
+}
+
+/* Print-specific styles */
+@media print {
+  @page {
+    margin: 20mm; /* Standard margin for all sides of the page */
+  }
+
+  /* Printable CV styling */
+  .digital-cv {
+    display: none;
+  }
+
+  .printable-cv {
+    display: block;
+    font-family: Arial, sans-serif;
+    color: #333;
+    max-width: 100%;
+  }
+
+  h1, h2 {
+    color: #000;
+  }
+
+  p {
+    color: #333;
+  }
+
+  /* Avoid breaking mapped items (like work experiences) */
+  .avoid-page-break {
+    page-break-inside: avoid;
+  }
+
+  /* Avoid separating section headers from their content */
+  section {
+    page-break-inside: avoid;
+    break-before: auto;
+  }
+
+  /* Remove headers and footers */
+  header, footer {
+    display: none;
+  }
 }
