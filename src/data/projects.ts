@@ -1,5 +1,12 @@
 export const projects = [
   {
+    title: 'Digital CV',
+    description: 'En interaktiv og responsiv digital CV som viser ferdigheter, arbeidserfaring, utdanning og prosjekter. Den er bygd med Next.js og Tailwind CSS, og har både en dynamisk visning og en utskriftsvennlig versjon.',
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    link: 'https://github.com/MadsenDev/my-digital-cv',
+    image: '/projects/my-digital-cv.png', // Placeholder image
+  },
+  {
     title: 'Kontoark Generator',
     description: 'En nettapplikasjon for å lage kontoark, hvor brukeren kan legge inn kontoinformasjon (f.eks. e-post og passord) for ulike merker og skrive dem ut på papir.',
     technologies: ['React', 'Node.js', 'Tailwind CSS', 'Express.js', 'Sequelize', 'MySQL'],
